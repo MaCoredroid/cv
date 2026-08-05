@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zhiyuan (Mark) Ma — Applied AI &amp; LLM Inference Systems</title>
+<meta name="description" content="Zhiyuan (Mark) Ma — Applied AI at Scale AI. Enterprise GenAI agents, verified financial AI, and independent LLM inference-systems research: served tree speculative decoding, custom Triton/CUDA kernels, agentic benchmarks.">
+<meta property="og:title" content="Zhiyuan (Mark) Ma — Applied AI &amp; LLM Inference Systems">
+<meta property="og:description" content="Enterprise GenAI agents where correctness is owned by code, and an independent LLM inference-systems research program: a first-author preprint, custom GPU kernels, a 3.04× decode speedup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mark-ma-sf.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<style>
+:root{
+  --bg:#fbfaf8; --fg:#16151a; --muted:#6b6862; --line:#e3e0d9;
+  --accent:#8a3d1f; --card:#fffefc; --code:#f2efe9;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#121114; --fg:#eeece8; --muted:#a29d96; --line:#2b2930;
+         --accent:#e8a87c; --card:#1a181d; --code:#1f1d23; }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:currentColor}
+
+header{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(30px,5vw,42px);line-height:1.12;margin:0 0 10px;letter-spacing:-.02em;font-weight:700}
+.role{font-size:clamp(16px,2.4vw,19px);color:var(--muted);margin:0 0 22px;line-height:1.5}
+.role strong{color:var(--fg);font-weight:600}
+.links{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:8px}
+.links a{
+  display:inline-block;padding:7px 14px;border:1px solid var(--line);border-radius:999px;
+  font-size:14px;color:var(--fg);background:var(--card);border-bottom:1px solid var(--line);
+}
+.links a:hover{border-color:var(--accent);color:var(--accent)}
+.links a.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.links a.primary:hover{opacity:.9;color:#fff}
+
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 20px;font-weight:600}
+h3{font-size:18px;margin:0 0 6px;font-weight:650;letter-spacing:-.01em}
+p{margin:0 0 14px}
+.lede{font-size:17px}
+
+.item{margin-bottom:30px}
+.item:last-child{margin-bottom:0}
+.meta{font-size:14px;color:var(--muted);margin:0 0 10px}
+ul{margin:10px 0 0;padding-left:18px}
+li{margin-bottom:7px}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.88em;
+     font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.card h3{font-size:16px}
+.card p{font-size:14.5px;color:var(--muted);margin:0}
+
+.vols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:8px 18px;margin-top:14px}
+.vols a{font-size:14.5px;display:block;padding:3px 0}
+.num{font-variant-numeric:tabular-nums;font-weight:650;color:var(--fg)}
+
+footer{padding:36px 0 60px;font-size:14px;color:var(--muted)}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Zhiyuan&nbsp;(Mark)&nbsp;Ma</h1>
+  <p class="role">
+    <strong>Applied AI at Scale AI.</strong> I build production GenAI systems where correctness is
+    owned by code — and run an independent LLM inference-systems research program on one desktop GPU.
+  </p>
+  <div class="links">
+    <a class="primary" href="resume.html">Resume</a>
+    <a href="Zhiyuan_Ma_Resume.pdf">Resume (PDF)</a>
+    <a href="https://macoredroid.github.io/Lumo_FlyWheel/">Lumo FlyWheel research</a>
+    <a href="https://github.com/MaCoredroid">GitHub</a>
+    <a href="https://linkedin.com/in/zhiyuanmatech">LinkedIn</a>
+  </div>
+</header>
+
+<section>
+  <h2>Now</h2>
+  <p class="lede">
+    At <strong>Scale AI (Applied AI)</strong> I design enterprise agents for finance workflows where a
+    wrong number moves real money. The current one reconstructs disputed invoices into a single cited
+    assessment — every dollar figure exists only as a formula over cited source cells, independently
+    recomputed by a verifier before any human sees it, behind zero-defect hard controls and a
+    frozen-cohort evaluation ladder. I also own the open-weight model program: serving cost estimation,
+    ablation sweeps, cross-harness evals, customer-environment deployment and throughput, and
+    post-training to close the gap to frontier models.
+  </p>
+</section>
+
+<section>
+  <h2>Research — Lumo FlyWheel</h2>
+  <p>
+    A solo program on a single <strong>NVIDIA DGX Spark (GB10)</strong>: vLLM internals, speculative
+    decoding, custom GPU kernels, and an agentic-coding benchmark. Everything below is measured, and
+    every volume ships a failure museum of the hypotheses that didn't survive.
+  </p>
+
+  <div class="item" style="margin-top:22px">
+    <h3><a href="https://macoredroid.github.io/Lumo_FlyWheel/gdn-tree-scan.html">GDN Tree-Scan: Served Tree Verification for Recurrent-Hybrid Language Models</a></h3>
+    <p class="meta">First-author systems preprint · 2026</p>
+    <p>
+      The first public served vLLM tree-speculative-decoding verifier for a Gated-DeltaNet hybrid
+      (Qwen3.6-27B FP8, 48 recurrent + 16 attention layers): a verifier contract combining attention
+      ancestry, path-local recurrent-state lineage, SpecInfer-style residual commitment, and
+      accepted-chain-only durable state publication — <span class="num">+27%</span> token-weighted
+      decode throughput in the paper's clean B=1 scope, lossless within the model's own
+      recurrent-oracle equivalence floor.
+    </p>
+  </div>
+
+  <div class="grid" style="margin-top:26px">
+    <div class="card">
+      <h3><span class="num">3.04×</span> decode speedup</h3>
+      <p>On a 27B coding agent via harness-coupled speculative decoding; 132-cell ablations, with published retractions when effects failed to replicate.</p>
+    </div>
+    <div class="card">
+      <h3>Custom GPU kernel stack</h3>
+      <p>Forked FlashAttention-2 tree-bias decode kernel, branch-local Triton GDN tree-scan/replay, device-side multidraft committer — CUDA-graph-capturable, proven byte-identical to reference.</p>
+    </div>
+    <div class="card">
+      <h3>CNB-55 benchmark</h3>
+      <p>11 tracks / 55 families / 275 variants of agentic coding tasks, with 3-layer deterministic graders, calibration loop, and contamination controls.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:26px;font-size:14px;color:var(--muted)">Published volumes</p>
+  <div class="vols">
+    <a href="https://macoredroid.github.io/Lumo_FlyWheel/">I — Codex-harness-coupled speculative decoding</a>
+    <a href="https://macoredroid.github.io/Lumo_FlyWheel/round-f.html">II — The reversal: the Gated-DeltaNet wall</a>
+    <a href="https://macoredroid.github.io/Lumo_FlyWheel/gdn-tree-scan.html">III — Lossless-within-floor GDN tree-scan</a>
+    <a href="https://macoredroid.github.io/Lumo_FlyWheel/gdn-prefix-cache.html">IV — Bit-exact prefix caching</a>
+    <a href="https://macoredroid.github.io/Lumo_FlyWheel/stateless-tree.html">V — Stateless tree speculative decoding</a>
+    <a href="https://macoredroid.github.io/Lumo_FlyWheel/spine-reorder.html">VI — One bit in the last place</a>
+    <a href="https://macoredroid.github.io/Lumo_FlyWheel/keep-or-replay.html">VII — Keep or replay</a>
+  </div>
+</section>
+
+<section>
+  <h2>Before</h2>
+
+  <div class="item">
+    <h3>Amazon — AWS Healthcare AI</h3>
+    <p class="meta">Software Engineer · Jul 2025 – Jul 2026</p>
+    <ul>
+      <li>Ontology-enriched patient knowledge layer (ICD-10, SNOMED CT, RxNorm, LOINC) compressing multi-million-token records into a navigable, per-claim-cited index.</li>
+      <li>HCC-suspecting pipeline with deterministic safety gates and CMS-mapped, citation-backed outputs — recall 1.0 on eval, zero unsupported codes.</li>
+      <li>Four-layer PHI de-identification pipeline — ~95% of manual review eliminated, validated by clinician red-team re-identification.</li>
+      <li>End-to-end clinical summarization agent with hallucination judging and a clinician-feedback flywheel.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <h3>Salesforce — Agentforce</h3>
+    <p class="meta">Software Engineer · May 2023 – Jul 2025</p>
+    <ul>
+      <li>First-wave developer of insurance domain agents; designed the agent-facing API layer so the model assembles but never computes.</li>
+      <li>Two proposals went platform-wide: invocation-location scoping (candidate pool ~200 → 4-5) and chain-of-thought tracing on the agent router.</li>
+      <li>Task success <span class="num">82% → 94%</span>; user-visible failures <span class="num">−55%</span>; p95 latency <span class="num">−22%</span>; LLM spend <span class="num">−25%</span>.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <h3>LawPorter — Founding Engineer</h3>
+    <p class="meta">Sep 2019 – Jun 2021</p>
+    <ul>
+      <li>Led 5 engineers building a Kubernetes bankruptcy SaaS: 1K+ companies, 50K+ claims, 22K creditors, 99.99% uptime.</li>
+      <li>Cut support MTTR 85% (5 h → 40 min) with Elastic/Fluentd observability.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Other work</h2>
+  <div class="grid">
+    <div class="card">
+      <h3><a href="https://ai.stock.lumorik.com/">AlphaPolicy</a></h3>
+      <p>Probabilistic alpha model + learned portfolio policy in PyTorch — distributional forecasting, cross-sectional Transformer allocation, explicit leakage controls.</p>
+    </div>
+    <div class="card">
+      <h3><a href="https://ai.tutor.lumorik.com/">Lumorik</a></h3>
+      <p>Full-stack AI tutor: goal-to-plan curricula, RAG over your PDFs with page-linked citations, realtime voice sessions and an AI interviewer.</p>
+    </div>
+    <div class="card">
+      <h3>LumoOmni</h3>
+      <p>Staged research build toward an omni-modal model from a text backbone, with ablation-first promotion gates and metric-based regression checks.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>
+    <a href="mailto:zhiyuanma0520@gmail.com">zhiyuanma0520@gmail.com</a> ·
+    <a href="https://github.com/MaCoredroid">github.com/MaCoredroid</a> ·
+    <a href="https://linkedin.com/in/zhiyuanmatech">linkedin.com/in/zhiyuanmatech</a>
+  </p>
+  <p>San Francisco Bay Area</p>
+</footer>
+
+</div>
+</body>
+</html>
